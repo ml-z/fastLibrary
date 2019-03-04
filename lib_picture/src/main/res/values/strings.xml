@@ -1,0 +1,9 @@
+<resources>
+    <string name="picture_original_image">原图</string>
+    <string name="picture_look_over">预览</string>
+    <string name="picture_complete">完成</string>
+    <string name="picture_album_name_all">图片</string>
+    <string name="picture_error_file_type">不支持的文件类型</string>
+    <string name="picture_editor">编辑</string>
+    <string name="picture_choose">选择</string>
+</resources>

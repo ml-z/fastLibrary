@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="@dimen/dp_60"
+    android:layout_height="@dimen/dp_60"
+    android:background="?android:attr/selectableItemBackground">
+
+
+
+    <ImageView
+        android:id="@+id/thumbnail_iv"
+        android:layout_width="@dimen/dp_60"
+        android:layout_height="@dimen/dp_60"
+        android:scaleType="centerCrop"/>
+
+    <View
+        android:id="@+id/thumbnail_border_view"
+        android:layout_width="@dimen/dp_60"
+        android:layout_height="@dimen/dp_60"
+        android:background="@drawable/picture_look_over_choose_bg"/>
+
+</RelativeLayout>

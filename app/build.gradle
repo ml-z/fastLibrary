@@ -1,0 +1,41 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+android {
+    def versions = rootProject.ext.versions
+    compileSdkVersion versions.sdkCompileVersion
+    defaultConfig {
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = ["AROUTER_MODULE_NAME": project.getName()]
+            }
+        }
+
+        applicationId "com.ml.fastlibrary"
+        minSdkVersion versions.sdkMinVersion
+        targetSdkVersion versions.sdkTargetVersion
+        versionCode versions.appVersionCode
+        versionName versions.appVersionName
+        multiDexEnabled true
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    def deps = rootProject.ext.deps
+
+    //路由
+    implementation deps.suport.appCompat
+    kapt deps.suport.arouterCompiler
+
+}

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/dp_46"
+    android:background="@color/picture_c_theme">
+
+    <ImageView
+        android:id="@+id/title_bar_back_iv"
+        android:paddingLeft="@dimen/dp_15"
+        android:paddingRight="@dimen/dp_20"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:src="@mipmap/picture_back_white"
+        android:background="?android:attr/selectableItemBackground"
+        />
+
+    <TextView
+        android:layout_toRightOf="@+id/title_bar_back_iv"
+        android:layout_toLeftOf="@+id/title_bar_right_tv"
+        android:id="@+id/title_bar_left_tv"
+        android:gravity="center_vertical"
+        android:textColor="@android:color/white"
+        android:layout_width="wrap_content"
+        android:textSize="@dimen/sp_14"
+        android:singleLine="true"
+        tools:text="@string/picture_album_name_all"
+        android:layout_height="match_parent" />
+
+    <TextView
+        android:id="@+id/title_bar_right_tv"
+        android:layout_alignParentRight="true"
+        tools:text="@string/picture_complete"
+        android:paddingLeft="@dimen/dp_15"
+        android:paddingRight="@dimen/dp_15"
+        android:textColor="#006000"
+        android:clickable="true"
+        android:textSize="@dimen/sp_14"
+        android:gravity="center_vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:focusable="true" />
+</RelativeLayout>

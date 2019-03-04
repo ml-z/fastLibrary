@@ -1,0 +1,56 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+
+android {
+    def versions = rootProject.ext.versions
+    compileSdkVersion versions.sdkCompileVersion
+
+    defaultConfig {
+        minSdkVersion versions.sdkMinVersion
+        targetSdkVersion versions.sdkTargetVersion
+        versionCode versions.appVersionCode
+        versionName versions.appVersionName
+
+
+        ndk {
+            abiFilters 'armeabi'
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
+    }
+
+    resourcePrefix 'picture'
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    def deps = rootProject.ext.deps
+
+    //加载图片
+    api(deps.suport.glide) {
+        exclude group: "com.android.support"
+    }
+    kapt deps.suport.glideCompiler
+    //图片压缩
+    api deps.suport.luban
+
+    api project(':lib_tool')
+
+    api deps.suport.recyclerview
+    api deps.suport.smartrefresh
+    api deps.suport.photoView
+}
